@@ -1,21 +1,21 @@
 .section .text
 .globl _start
 _start:
-    movq $5, %rax
-    movq $4, %rbx
+    movq $4, %rax
+    movq $5, %rbx
     cmpq %rbx, %rax
     jg if
     jmp else   
 
 if:
-    addq %rax, %rbx
+    addq %rbx, %rax
     jmp fim
 
 else:
-    subq %rax, %rbx
+    subq %rbx, %rax
 
 fim:
     movq %rax, %rdi
-    movq %60, %rax
+    movq %60, %rdi
     syscall
     
