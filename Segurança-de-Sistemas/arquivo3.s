@@ -16,6 +16,6 @@ else:
 
 fim:
     movq %rax, %rdi
-    movq %60, %rdi
+    movq $60, %rdi
     syscall
     

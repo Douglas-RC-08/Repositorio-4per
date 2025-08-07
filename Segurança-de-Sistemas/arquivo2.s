@@ -12,5 +12,5 @@ loop:
 
 fim_loop: 
     movq %rax, %rdi
-    movq %60, %rax
+    movq $60, %rax
     syscall
