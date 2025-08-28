@@ -89,26 +89,26 @@ class ListaEncadeada {
         temp.prox = null;
     }
 
-    // Remoção em posição específica
-    public void removerPosicao(int pos) {
-        if (estaVazia()) {
-            System.out.println("Lista vazia!");
-            return;
+        // Remoção em posição específica
+        public void removerPosicao(int pos) {
+            if (estaVazia()) {
+                System.out.println("Lista vazia!");
+                return;
+            }
+            if (pos == 0) {
+                removerInicio();
+                return;
+            }
+            No temp = inicio;
+            for (int i = 0; i < pos - 1 && temp != null; i++) {
+                temp = temp.prox;
+            }
+            if (temp == null || temp.prox == null) {
+                System.out.println("Posição inválida!");
+            } else {
+                temp.prox = temp.prox.prox;
+            }
         }
-        if (pos == 0) {
-            removerInicio();
-            return;
-        }
-        No temp = inicio;
-        for (int i = 0; i < pos - 1 && temp != null; i++) {
-            temp = temp.prox;
-        }
-        if (temp == null || temp.prox == null) {
-            System.out.println("Posição inválida!");
-        } else {
-            temp.prox = temp.prox.prox;
-        }
-    }
 
     // Imprimir lista
     public void imprimir() {
